@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Exercise5_BankAccount"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Bank of Sligo IT" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="listBoxBankAccounts" Margin="50" SelectionChanged="ListBoxBankAccounts_SelectionChanged" />
+
+        <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBox Name="textBoxAmount" Margin="25" Width="150"/>
+            <Button Name="buttonWithdraw" Margin="25" Width="100" Content="Withdraw" Click="ButtonWithdraw_Click"/>
+            <Button Name="buttonDeposit" Margin="25" Width="100" Content="Deposit" Click="ButtonDeposit_Click"/>
+            <Button Name="buttonAddInterest" Margin="25" Width="100" Content="Add Interest" Click="ButtonAddInterest_Click"/>
+            <Button Name="buttonSaveToFile" Margin="25" Width="100" Content="Save" Click="ButtonSaveToFile_Click"/>
+        </StackPanel>
+        <Border Grid.Column="1"  Margin="50" BorderBrush="blue" BorderThickness="2" CornerRadius="5">
+            <TextBlock x:Name="textBlockShowAccount"  TextWrapping="Wrap"/>
+        </Border>
         
     </Grid>
 </Window>
