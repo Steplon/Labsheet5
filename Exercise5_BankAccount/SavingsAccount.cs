@@ -30,7 +30,7 @@ namespace Exercise5_BankAccount
             return base.DisplayAccount() + string.Format($"Savings Rate:\t{SavingsRate:P2}\n");
         }
 
-        public override void AddInterest()
+        public void AddInterest()
         {
             Balance *= 1 + SavingsRate;
         }

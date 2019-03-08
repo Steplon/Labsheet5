@@ -31,12 +31,6 @@ namespace Exercise5_BankAccount
             Balance = balance;
         }
 
-        //Abstract methods
-        public virtual void AddInterest()
-        {
-
-        }
-
         //methods
         public override string ToString()
         {

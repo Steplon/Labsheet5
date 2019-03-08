@@ -38,9 +38,14 @@ namespace Exercise5_BankAccount
 
         private void ButtonAddInterest_Click(object sender, RoutedEventArgs e)
         {
-            selectedBankAccount.AddInterest();
-            listBoxBankAccounts.SelectedItem = selectedBankAccount;
-            textBlockShowAccount.Text = selectedBankAccount.DisplayAccount();
+            if (selectedBankAccount is SavingsAccount)
+            {
+                SavingsAccount savingsAccount = (SavingsAccount)selectedBankAccount;
+                savingsAccount.AddInterest();
+                listBoxBankAccounts.SelectedItem = selectedBankAccount;
+                textBlockShowAccount.Text = selectedBankAccount.DisplayAccount();
+            }
+
         }
 
         private void ButtonWithdraw_Click(object sender, RoutedEventArgs e)
